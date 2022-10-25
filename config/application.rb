@@ -30,5 +30,8 @@ module Wather2
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.generators do |g|
+      g.orm :mongoid
+    end
   end
 end
