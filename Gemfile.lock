@@ -73,6 +73,7 @@ GEM
       msgpack (~> 1.2)
     bson (4.15.0)
     builder (3.2.4)
+    bulma (0.1.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -225,6 +226,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bulma
   capybara
   debug
   importmap-rails
