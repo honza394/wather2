@@ -2,13 +2,15 @@
 
 <h1>Posts</h1>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
-</div>
+<%= link_to "New post", 
+  new_post_path,
+  data: { turbo_frame: dom_id(Post.new) } %>
 
-<%= link_to "New post", new_post_path %>
+<%= turbo_frame_tag Post.new %>
+
+<%= turbo_frame_tag "posts" do %>
+  <%= render @posts %>
+<% end %>
+
+
+

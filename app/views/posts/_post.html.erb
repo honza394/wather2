@@ -1,12 +1,8 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
 
-  <p>
-    <strong>Body:</strong>
-    <%= post.body %>
-  </p>
-
-</div>
+<%= turbo_frame_tag post do %>
+  <div class="box">
+    <span><%= post.title %></span>
+    <span><%= post.body%></span>
+    <span><%= link_to "Show", post %></span>
+  </div>
+<% end %>
