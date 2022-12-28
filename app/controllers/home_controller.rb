@@ -3,16 +3,16 @@ class HomeController < ApplicationController
   require "uri"
 
   def index
-    uri = URI.parse("http://localhost:8000/echo?msg=hello") 
+    uri = URI.parse("http://0.0.0.0:8080/echo?msg=hello") 
     response = Net::HTTP.get_response(uri)
     @hello = response.body
 
-    uri = URI("http://localhost:8000/sum")
+    uri = URI("http://0.0.0.0:8080/sum")
     response = Net::HTTP.post_form(uri, "a" => 5, "b" => 7)
     #@sum = JSON.parse(response.body)
     @sum = response.body
 
-    uri = URI("http://localhost:8000/viridis")
+    uri = URI("http://0.0.0.0:8080/viridis")
     response = Net::HTTP.get_response(uri)
 
     @viridis = response.body
